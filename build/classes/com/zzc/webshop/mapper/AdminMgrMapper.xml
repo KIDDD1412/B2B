@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- com.dao.AdminMgrDao对应Dao接口 -->
+<mapper namespace="com.zzc.webshop.mapper.AdminMgrMapper">
+	<!-- 查询管理员信息 -->
+	<select id="selectMgr"  resultType="com.zzc.webshop.po.Manager" >
+		select * from manager
+	</select>
+	<insert id="addMgr" parameterType="com.zzc.webshop.po.Manager" useGeneratedKeys="true" keyProperty="mid">
+		insert into manager (mname,mpassword) values (#{mname},#{mpassword})
+	</insert>
+	<update id="auto">
+		alter table manager auto_increment = 1;
+	</update>
+	<delete id="deleteMgr" parameterType="Integer">
+		delete from manager where mid = #{mid}
+	</delete>
+</mapper>

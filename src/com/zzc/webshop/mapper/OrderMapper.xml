@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzc.webshop.mapper.OrderMapper">
+  <!-- 添加一个订单，成功后将主键值回填给id（po类的属性）-->
+  <insert id="addOrder" parameterType="com.zzc.webshop.po.Order" keyProperty="id" useGeneratedKeys="true">
+    insert into orders (oid, gid, gamount, gprice,oprice,sid,bid,contract,oversion,date,status) values (null, #{gid}, #{gamount}, #{gprice},#{oprice},#{sid},#{bid},#{contract},1,now(),0)
+  </insert>
+  <!-- 根据uid查询购买的订单 -->
+  <select id="searchBorder"  resultType="com.zzc.webshop.po.Order" parameterType="String">
+    select * from orders where bid=#{uid}
+  </select>
+  <!-- 根据uid查询卖出的订单 -->
+  <select id="searchSorder"  resultType="com.zzc.webshop.po.Order" parameterType="String">
+    select * from orders where sid=#{uid}
+  </select>
+  <!-- 根据oid查订单 -->
+  <select id="findOrder"  resultType="com.zzc.webshop.po.Order" parameterType="String">
+    select * from orders where oid=#{oid}
+  </select>
+  <!-- 更新orders表中的订单，保持最新 -->
+  <update id="updateOrder" parameterType="com.zzc.webshop.po.Order" keyProperty="id" useGeneratedKeys="true">
+    update orders set gid=#{gid}, gamount=#{gamount}, gprice=#{gprice}, oprice=#{oprice}, sid=#{sid}, bid=#{bid}, contract=#{contract}, oversion=#{oversion}, date=now(),status=#{Status} where oid=#{oid}
+  </update>
+  <!-- 添加一个历史订单，成功后将主键值回填给id（po类的属性）-->
+  <insert id="addOrderHistory" parameterType="com.zzc.webshop.po.Order" keyProperty="id" useGeneratedKeys="true">
+    insert into orderhistory (oid, gid, gamount, gprice,oprice,sid,bid,contract,oversion,date) values (#{oid}, #{gid}, #{gamount}, #{gprice},#{oprice},#{sid},#{bid},#{contract},#{oversion}-1,#{date})
+  </insert>
+  <!-- 查找历史订单-->
+  <select id="findOrderHistory"  resultType="com.zzc.webshop.po.Order" parameterType="String">
+    select * from orderhistory where oid=#{oid}
+  </select>
+  <!-- 查找付款订单-->
+  <select id="serchOrderByOid"  resultType="com.zzc.webshop.po.Order">
+    select * from orders where oid=#{oid}
+  </select>
+
+</mapper>
