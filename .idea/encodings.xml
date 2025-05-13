@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/AdminController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/AdminGoodsController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/AdminMgrController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/AdminStoresController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/BaseController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/CartController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/CashController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/UpdateStoreDetailController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/controller/UserCenterController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/AdminGoodsMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/AdminGoodsMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/AdminMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/AdminMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/AdminMgrMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/AdminMgrMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/AdminStoresMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/AdminStoresMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/mapper/admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/po/Manager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/po/Order.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/AdminGoodsService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/AdminMgrService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/AdminService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/AdminStoresService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/IndexService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/OrderService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/impl/AdminGoodsServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/impl/AdminMgrServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/impl/AdminServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/impl/AdminStoresServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/impl/IndexServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zzc/webshop/service/impl/UserServiceImpl.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

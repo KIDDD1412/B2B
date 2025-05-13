@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzc.webshop.mapper.UserBehaviorMapper">
+	<!-- 获取用户的浏览记录 -->
+	<select id="getUserBrowseRecords" resultType="map" parameterType="Integer">
+		SELECT gid FROM user_browse WHERE uid = #{uid}
+	</select>
+	<!-- 获取用户的购买记录 -->
+	<select id="getUserPurchaseRecords" resultType="map" parameterType="Integer">
+		SELECT goods_id FROM user_purchase WHERE uid = #{uid}
+	</select>
+	<!-- 获取浏览过指定商品的用户记录 -->
+	<select id="getUserBrowseRecordsByGoodsId" resultType="map" parameterType="Integer">
+		SELECT user_id FROM user_browse WHERE goods_id = #{goodsId}
+	</select>
+
+	<!-- 获取购买过指定商品的用户记录 -->
+	<select id="getUserPurchaseRecordsByGoodsId" resultType="map" parameterType="Integer">
+		SELECT user_id FROM user_purchase WHERE goods_id = #{goodsId}
+	</select>
+</mapper>

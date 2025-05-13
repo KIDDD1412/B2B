@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/WebContent/pages/computer.jsp" value="file://$PROJECT_DIR$/WebContent/pages" />
+        <entry key="file://$PROJECT_DIR$/WebContent/pages/talk.jsp" value="file://$PROJECT_DIR$/WebContent/pages" />
+        <entry key="file://$PROJECT_DIR$/WebContent/pages2/createOrder.jsp" value="file://$PROJECT_DIR$/WebContent/pages2" />
+        <entry key="file://$PROJECT_DIR$/WebContent/pages3/addStore.jsp" value="file://$PROJECT_DIR$/WebContent/pages3" />
+        <entry key="file://$PROJECT_DIR$/WebContent/pages3/selectGoods.jsp" value="file://$PROJECT_DIR$/WebContent/pages3" />
+      </map>
+    </option>
+  </component>
+</project>

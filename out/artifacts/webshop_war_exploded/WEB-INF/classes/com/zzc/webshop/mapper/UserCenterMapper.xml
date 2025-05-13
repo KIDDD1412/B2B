@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzc.webshop.mapper.UserCenterMapper">
+	<select id="myStore" resultType="map"  parameterType="Integer">
+		select * from store where sellID = #{bid}
+	</select>
+	<select id="myAccount" resultType="map"  parameterType="Integer">
+		select uid,ubalance from user where uid = #{userId}
+	</select>
+	<select id="selectStoreByid" parameterType="Integer" resultType="com.zzc.webshop.po.Store">
+		select *
+		from store  where sid=#{storen}
+	</select>
+	<insert id="addStore" parameterType="com.zzc.webshop.po.Store">
+		insert into store (sid,sellID,sname,sstatus) 
+		values (null, #{sellID},#{sname},#{sstatus})
+	</insert>
+	<delete id="deleteStore" parameterType="Integer">
+		delete from store where sid=#{storesn}
+	</delete>
+	<update id="updateStore" parameterType="com.zzc.webshop.po.Store">
+    update store
+    <set>
+    <if test="sname != null">
+        sname = #{sname},
+      </if>
+    </set>
+    	where sid = #{sid}
+  </update>
+  <update id="recharge" parameterType="map">
+    update user
+    <set>
+    <if test="count != null">
+        ubalance = #{count}+ubalance,
+      </if>
+    </set>
+    	where uid = #{uid}
+  </update>
+<select id="selectItem" parameterType="Integer" resultType="map">
+		select *
+		from GOODS  where sid=#{storen}
+	</select>
+
+	<select id="myTrade_out" resultType="map"  parameterType="Integer">
+		SELECT tr.tid,tr.order_id,tr.amount,tr.date,bt.uname
+        FROM trade tr, user bt
+        WHERE tr.account_out=#{bid} AND bt.uid=tr.account_in
+	</select>
+
+	<select id="myTrade_in" resultType="map"  parameterType="Integer">
+		SELECT tr.tid,tr.order_id,tr.amount,tr.date,bt.uname
+        FROM trade tr, user bt
+        WHERE tr.account_in=#{bid} AND bt.uid=tr.account_out
+	</select>
+
+<!--添加流水记录-->
+	<insert id="addTrade" parameterType="com.zzc.webshop.po.Trade"  keyProperty="tid" useGeneratedKeys="true">
+		insert into trade (account_in, account_out, order_id, date, amount) values (#{in}, #{out}, #{oid}, now(), #{amount})
+	</insert>
+
+	<select id="orderDetail" resultType="map"  parameterType="Integer">
+		select gt.gid, gt.gname, gt.gprice, gt.gpicture, odt.shoppingnum from  GOODS gt, ORDERDETAIL odt 
+		where  odt.orderbase_id=#{ordersn} and gt.gid=odt.goods_id 
+	</select>
+	
+</mapper>
