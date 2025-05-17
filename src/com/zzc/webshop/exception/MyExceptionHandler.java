@@ -16,8 +16,8 @@ public class MyExceptionHandler implements HandlerExceptionResolver {
         model.put("ex", arg3); 
       if(arg3 instanceof UserLoginNoException){
         	arg0.setAttribute("ruser", new User());
-        	arg0.setAttribute("msg", "没有登录，请登录！");
-        	return new ModelAndView("/login", model);
+        	arg0.setAttribute("msg", "请登录后体验更多功能");
+        	return new ModelAndView("/pages2/login2", model);
        }else{  
         	return new ModelAndView("/error", model);  
         }  

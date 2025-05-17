@@ -9,15 +9,15 @@
 	</select>
 	<!-- 获取用户的购买记录 -->
 	<select id="getUserPurchaseRecords" resultType="map" parameterType="Integer">
-		SELECT goods_id FROM user_purchase WHERE uid = #{uid}
+		SELECT gid FROM user_purchase WHERE uid = #{uid}
 	</select>
 	<!-- 获取浏览过指定商品的用户记录 -->
 	<select id="getUserBrowseRecordsByGoodsId" resultType="map" parameterType="Integer">
-		SELECT user_id FROM user_browse WHERE goods_id = #{goodsId}
+		SELECT uid FROM user_browse WHERE gid = #{gid}
 	</select>
 
 	<!-- 获取购买过指定商品的用户记录 -->
 	<select id="getUserPurchaseRecordsByGoodsId" resultType="map" parameterType="Integer">
-		SELECT user_id FROM user_purchase WHERE goods_id = #{goodsId}
+		SELECT uid FROM user_purchase WHERE gid = #{gid}
 	</select>
 </mapper>

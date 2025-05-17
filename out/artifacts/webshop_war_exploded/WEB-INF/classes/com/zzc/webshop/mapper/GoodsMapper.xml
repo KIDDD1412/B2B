@@ -15,7 +15,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectGoodsById"  resultType="com.zzc.webshop.po.Goods" parameterType="Integer">
 		select gt.*,gy.typename from goods gt,goodstype gy where gt.id=#{id} and gt.goodstype_id = gy.id
 	</select>
-
+	<!-- 根据id获取商品介绍 -->
+	<select id="getGoodsIntroduction"  resultType="string" parameterType="Integer">
+		select gintroduction from goods gt where gt.gid=#{gid}
+	</select>
   <!-- 查询关联商品 -->
   <select id="selectCartGoods" parameterType="Integer" resultType="map">
   	select * from carttable where goods_id=#{id}

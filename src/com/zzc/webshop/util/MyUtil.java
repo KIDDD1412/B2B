@@ -20,7 +20,13 @@ public class MyUtil {
 	 * 获得用户ID
 	 */
 	public static Integer getUserId(HttpSession session) {
-		User ruser = (User)session.getAttribute("ruser");
+		if (session == null) {
+			return null;
+		}
+		User ruser = (User) session.getAttribute("ruser");
+		if (ruser == null) {
+			return null;
+		}
 		return ruser.getUid();
 	}
 	/**

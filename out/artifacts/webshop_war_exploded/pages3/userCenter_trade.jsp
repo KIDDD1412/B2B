@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li class="f-item"><a href="searchOrder" target="_blank">我的订单</a></li>
 						<li class="f-item space"></li>
 						<%--TODO 我的尚品购 home.html--%>
-						<li class="f-item"><a href="home.html" target="_blank">我的尚品购</a></li>
+						<li class="f-item">我的尚品购</li>
 						<li class="f-item space"></li>
 						<li class="f-item">尚品购会员</li>
 						<li class="f-item space"></li>

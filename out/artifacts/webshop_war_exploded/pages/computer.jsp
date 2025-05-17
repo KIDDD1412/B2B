@@ -79,7 +79,7 @@
 						<li class="f-item"><a href="searchOrder" target="_blank">我的订单</a></li>
 						<li class="f-item space"></li>
 						<!-- TODO 我的尚品购 home.html -->
-						<li class="f-item"><a href="home.html" target="_blank">我的尚品购</a></li>
+						<li class="f-item">我的尚品购</li>
 						<li class="f-item space"></li>
 						<li class="f-item">尚品购会员</li>
 						<li class="f-item space"></li>
@@ -124,7 +124,7 @@
 		<span style="text-indent: 50px;">商品介绍: ${product.gintroduction}</span>
 		<br><br>
 		<!-- TODO  继续购物  products.do -->
-		<a href="before?id=0" class="btn btn-default">继续购物</a>
+		<a href="before?pageCur=${pageCur }" class="btn btn-default">继续购物</a>
 		<!-- TODO  购物车  addcart -->
 		<a href="/cart/putCart?shoppingnum=1&id=${product.gid}" class="btn btn-primary addToCart" role="button">
 			<i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> 加入购物车

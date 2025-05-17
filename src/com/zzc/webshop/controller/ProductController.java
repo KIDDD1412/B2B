@@ -27,14 +27,21 @@ public class ProductController {
 
 	// 展示商品详情
 	@RequestMapping(value = "productdetail")
-	public String productdetail(HttpSession session, int productid) {
+	public String productdetail(HttpSession session, int productid ,int pageCur) {
 		Goods product = productService.selectByPrimaryKey(productid);
 		//computer页面中通过 ${product} 获得商品信息
 		session.setAttribute("product", product);
-		Map<String, Object> browseRecord = new HashMap<>();
-		browseRecord.put("uid", MyUtil.getUserId(session));
-		browseRecord.put("gid", productid);
-		productService.addBrowseRecord(browseRecord);
+		session.setAttribute("pageCur", pageCur);
+		// 获取用户ID
+		Integer userId = MyUtil.getUserId(session);
+
+		// 只有在两个id都不为空时才进行添加浏览记录操作
+		if (userId != null && productid != 0) {
+			Map<String, Object> browseRecord = new HashMap<>();
+			browseRecord.put("uid", userId);
+			browseRecord.put("gid", productid);
+			productService.addBrowseRecord(browseRecord);
+		}
 		//返回商品详情路径
 		return "pages/computer";
 	}

@@ -78,7 +78,7 @@
                         <li class="f-item"><a href="searchOrder" target="_blank">我的订单</a></li>
                         <li class="f-item space"></li>
 <%--TODO 我的尚品购 home.html--%>
-                        <li class="f-item"><a href="home.html" target="_blank">我的尚品购</a></li>
+                        <li class="f-item">我的尚品购</li>
 
                         <li class="f-item space"></li>
                         <li class="f-item">尚品购会员</li>
@@ -227,10 +227,11 @@
                         <li>
                             <div>
                                 <p class="pic">
-                                    <a href="productdetail.do?productid=${sg.gid }"><img src="logos/${sg.gpicture}" /></a>
+                                    <a href="productdetail.do?productid=${sg.gid }&pageCur=${pageCur }"><img src="logos/${sg.gpicture}" /></a>
+
                                 </p>
                                 <p class="wz">
-                                    <strong><a href="productdetail.do?productid=${sg.gid }">${sg.gname }</a></strong>
+                                    <strong><a href="productdetail.do?productid=${sg.gid }&pageCur=${pageCur }">${sg.gname }</a></strong>
                                     <em>现价:<span>￥${sg.gprice}</span></em>
                                 </p>
                             </div>
@@ -255,8 +256,25 @@
         </div>
     </div>
 </div>
-
-
+<div class="recommend-container"> <!-- 新增容器 -->
+<h1>推荐商品</h1>
+<div class="recommendgood_nr clearfix">
+    <%-- 循环展示推荐商品 --%>
+    <c:forEach items="${recommendedGoods}" var="sg" varStatus="loop">
+        <li>
+            <div>
+                <p class="pic">
+                    <a href="productdetail.do?productid=${sg.gid }"><img src="logos/${sg.gpicture}" /></a>
+                </p>
+                <p class="wz">
+                    <strong><a href="productdetail.do?productid=${sg.gid }">${sg.gname }</a></strong>
+                    <em>现价:<span>￥${sg.gprice}</span></em>
+                </p>
+            </div>
+        </li>
+    </c:forEach>
+</div>
+</div>
 <!-- 底部栏位 -->
 <!--页面底部-->
 <div class="clearfix footer">

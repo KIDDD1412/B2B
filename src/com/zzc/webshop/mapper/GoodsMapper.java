@@ -13,6 +13,7 @@ public interface GoodsMapper {
 	public List<Goods> selectGoods();
 	public List<Goods> selectAllGoodsByPage(Map<String, Object> map);
 	public Goods selectGoodsById(Integer id);
+	public  String getGoodsIntroduction(Integer id);
 	public List<Map<String, Object>> selectCartGoods(Integer id);
 	public List<Map<String, Object>> selectFocusGoods(Integer id);
 	public List<Map<String, Object>> selectOrderdetailGoods(Integer id);

@@ -14,8 +14,8 @@ public interface UserBehaviorMapper {
     // 获取用户的购买记录
     List<Map<String, Object>> getUserPurchaseRecords(Integer uid);
     // 获取浏览过指定商品的用户记录
-    List<Map<String, Object>> getUserBrowseRecordsByGoodsId(Integer goodsId);
+    List<Map<String, Object>> getUserBrowseRecordsByGoodsId(Integer gid);
 
     // 获取购买过指定商品的用户记录
-    List<Map<String, Object>> getUserPurchaseRecordsByGoodsId(Integer goodsId);
+    List<Map<String, Object>> getUserPurchaseRecordsByGoodsId(Integer gid);
 }
