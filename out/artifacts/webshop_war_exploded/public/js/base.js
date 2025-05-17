@@ -1,1 +1,0 @@
-var app = angular.module("youmai", []); //定义未分页模块
